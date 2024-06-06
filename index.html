@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1><u>Sara Abacus</u></h1>
+        <center><h2>Login</h2></center>
+        <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message"></p>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCoo1UZt6daTqU1BRmTJoxJN601KNhvf4c",
+            authDomain: "abacus-1cd92.firebaseapp.com",
+            projectId: "abacus-1cd92",
+            storageBucket: "abacus-1cd92.appspot.com",
+            messagingSenderId: "52069573106",
+            appId: "1:52069573106:web:224d42e32e098446a34b6b",
+            measurementId: "G-NCZPLYG1NR"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firebase Authentication and get a reference to the service
+        var auth = firebase.auth();
+
+        // Listen for form submit event
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+              .then((userCredential) => {
+                    // Signed in 
+                    var user = userCredential.user;
+                    window.location.href = 'dashboard.html';
+                })
+              .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    document.getElementById('error-message').textContent = errorMessage;
+                });
+        });
+
+    </script>
+</body>
+</html>

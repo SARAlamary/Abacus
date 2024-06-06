@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="quiz-container" id="result">
+        <div class="quiz-header">
+            <h2>Your Results</h2>
+            <p id="result-text"></p>
+        </div>
+        <button onclick="location.href='quiz.html'">Retry</button>
+    </div>
+    <script>
+        const score = localStorage.getItem("score");
+        const total = localStorage.getItem("total");
+        const resultText = document.getElementById("result-text");
+        resultText.innerHTML = `You answered correctly ${score}/${total} questions.`;
+    </script>
+</body>
+</html>

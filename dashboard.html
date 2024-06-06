@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus Quiz Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background: #333;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logout-button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2><b>Exams</b></h2>
+        <a href="quiz.html">Abacus Level 1</a>
+        <a href="quiz2.html">Quiz 2</a>
+        <a href="quiz3.html">Quiz 3</a>
+    </div>
+    <div class="main-content">
+        <h1 id="greeting">Welcome!</h1>
+        <button id="logout-button" class="logout-button">Logout</button>
+    </div>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="countdown-overlay" id="countdown-overlay">
+        <div class="countdown-container">
+            <h1 id="countdown">3</h1>
+        </div>
+    </div>
+    <div class="quiz-container" id="quiz">
+        <div id="timer">Time Taken: <span id="time">00:00:00s</span></div>
+        <div class="quiz-header">
+            <h2 id="question">Question text</h2>
+            
+            <ul>
+                <li>
+                    <input type="radio" id="a" name="answer" class="answer" />
+                    <label id="a_text" for="a">Option</label>
+                </li>
+                <li>
+                    <input type="radio" id="b" name="answer" class="answer" />
+                    <label id="b_text" for="b">Option</label>
+                </li>
+                <li>
+                    <input type="radio" id="c" name="answer" class="answer" />
+                    <label id="c_text" for="c">Option</label>
+                </li>
+            </ul>
+        </div>
+
+        <button id="previous" style="display: none;">Previous</button>
+        <button id="next">Next</button>
+        <button id="submit" style="display: none;">Submit</button>
+    </div>
+    <script type="module" src="quiz.js"></script>
+</body>
+</html>
